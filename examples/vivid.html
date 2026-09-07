@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>跳跳市集 活動企劃｜brand-brain 範本「粉彩玩趣」</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Huninn&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--primary:#3B2A20;--bg:#F6F4EE;--ink:#3B2A20;--accent:#9DC183;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#3B2A20;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;font-weight:400;color:var(--ink)}
+  .slide{width:1280px;height:720px;margin:0 auto 24px;padding:88px;background:var(--bg);position:relative;overflow:hidden;display:flex;flex-direction:column}
+  .slide > *{position:relative;z-index:1}
+  h1,h2,.num,.secnum{font-family:"Huninn","PingFang TC",serif;font-weight:400;color:var(--primary)}
+  h1{font-size:72px;line-height:1.2} h2{font-size:40px;line-height:1.3}
+  p{font-size:22px;line-height:1.7} .note{font-size:14px;color:var(--primary);opacity:.85}
+  .mark{position:absolute;top:48px;right:88px;font-family:"Huninn",serif;font-weight:400;font-size:18px;letter-spacing:.3em;color:var(--primary);z-index:2}
+  .pn{position:absolute;bottom:32px;right:88px;font-size:14px;color:var(--primary);z-index:2}
+  .cover{justify-content:flex-end} .cover .eyebrow{font-size:16px;letter-spacing:.3em;color:var(--accent);margin-bottom:20px}
+  .cover .sub{margin-top:20px} .cover .rule{height:3px;background:var(--primary);width:120px;margin-top:40px}
+  .section{background:#3B2A20;justify-content:center}
+  .section .secnum{font-size:120px;line-height:1;color:#F6F4EE;opacity:.35}
+  .section h2{color:#F6F4EE;font-size:56px;margin-top:8px}
+  .section .mark,.section .pn{color:#F6F4EE}
+  .content .grid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-content:center;margin-top:24px}
+  .card{padding:32px;border-radius:28px}
+  .card svg{color:var(--primary);margin-bottom:20px;display:block} .card strong{display:block;font-size:22px;font-weight:500;color:var(--primary);margin-bottom:8px}
+  .split .cols{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:24px}
+  .split .lines p{padding:14px 0;border-top:1px solid var(--primary)} .split .lines p:first-child{border-top:none}
+  .split .photo{aspect-ratio:4/3}
+  .stat{justify-content:center} .num{font-size:200px;line-height:1;color:var(--accent)} .stat p{margin-top:24px;max-width:640px}
+  .steps .row{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-content:center;margin-top:24px}
+  .step{padding:28px 32px;border-radius:28px;border-top:3px solid var(--accent)}
+  .step .n{font-family:"Huninn",serif;font-weight:400;font-size:40px;color:var(--accent);line-height:1}
+  .step strong{display:block;font-size:22px;font-weight:500;color:var(--primary);margin:14px 0 6px}
+  .closing{justify-content:center;gap:32px} .closing .contact{color:var(--primary);font-size:22px}
+  /* Design System 頁 */
+  .ds .dsgrid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:20px;margin-top:20px}
+  .dsbox{padding:24px 26px;border-radius:28px;background:rgba(255,255,255,.5);border:1px solid rgba(59,42,32,0.18);display:flex;flex-direction:column;gap:12px;min-height:0}
+  .dsl{font-size:12px;letter-spacing:.25em;color:var(--accent);font-weight:500}
+  .sw{display:flex;gap:10px;flex-wrap:wrap} .sw div{width:64px} .sw i{display:block;height:44px;border-radius:12px;border:1px solid rgba(59,42,32,0.15)} .sw span{display:block;font-size:11px;margin-top:4px;color:var(--ink);opacity:.8;font-family:ui-monospace,Menlo,monospace}
+  .dsh{font-family:"Huninn",serif;font-weight:400;font-size:34px;line-height:1.2;color:var(--primary)} .dsb{font-size:16px;line-height:1.6} .dsm{font-size:12px;opacity:.7}
+  .dsicons{display:flex;gap:16px;align-items:center} .dsicons svg{color:var(--primary)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px} .chips span{font-size:13px;padding:4px 12px;border:1px solid rgba(59,42,32,0.35);border-radius:999px;color:var(--primary)}
+  .dsbase{font-size:15px;line-height:1.6}
+  /* 底稿風格：粉彩色塊 */
+  .dd,.blob{position:absolute;z-index:0;pointer-events:none}
+  .photo{background:#3B2A20;display:flex;align-items:flex-end;padding:20px;border-radius:28px} .photo span{color:#F6F4EE;font-size:14px}
+  .hl{background:linear-gradient(transparent 58%,#9DC183 58%)}
+  .card,.step{border:none;border-radius:28px}
+  .card:nth-child(1),.step:nth-child(1){background:#F9C6C0} .card:nth-child(2),.step:nth-child(2){background:#F6E27A} .card:nth-child(3),.step:nth-child(3){background:#B9CDEB}
+  .step{border-top:none} .card strong,.step strong{color:#3B2A20} .card svg{color:#3B2A20}
+  .dsbox{background:#fff;border-radius:28px}
+  .section{background:#9DC183} .section .secnum,.section h2,.section .mark,.section .pn{color:#3B2A20}
+  .split .photo{background:#B9CDEB;border-radius:28px} .split .photo span{color:#3B2A20}
+  .num{color:#9DC183;-webkit-text-stroke:2px #3B2A20;text-stroke:2px #3B2A20}
+  body.bake [data-txt]{visibility:hidden}
+  body.bake.native [data-box]{visibility:hidden}
+  body.bake.native [data-box] [data-icon]{visibility:hidden}
+</style></head>
+<body class="">
+<section class="slide ds"><div class="mark" data-txt>跳跳市集</div><h2 data-txt>Design System · 粉彩玩趣</h2>
+  <div class="dsgrid">
+   <div class="dsbox" data-box><div class="dsl" data-txt>色票 60-30-10</div><div class="sw"><div><i style="background:#3B2A20" data-box></i><span data-txt>#3B2A20</span></div><div><i style="background:#F6F4EE" data-box></i><span data-txt>#F6F4EE</span></div><div><i style="background:#3B2A20" data-box></i><span data-txt>#3B2A20</span></div><div><i style="background:#9DC183" data-box></i><span data-txt>#9DC183</span></div><div><i style="background:#F9C6C0" data-box></i><span data-txt>#F9C6C0</span></div><div><i style="background:#F6E27A" data-box></i><span data-txt>#F6E27A</span></div><div><i style="background:#B9CDEB" data-box></i><span data-txt>#B9CDEB</span></div><div><i style="background:#CDB8E6" data-box></i><span data-txt>#CDB8E6</span></div></div><div class="dsm" data-txt>主色 · 背景 · 文字 · 強調（後面是底稿輔助色，只用在底稿）</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>字型</div><div class="dsh" data-txt>標題 Huninn</div><div class="dsb" data-txt>內文 Noto Sans TC · 字級 72 / 40 / 22 / 14 · 行距 1.7</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>底稿風格</div><div class="dsh" data-txt>粉彩色塊</div><div class="dsbase" data-txt>邊緣散落粉彩有機色塊；標題色帶；卡片三種粉彩底；章節頁換強調綠</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>元件</div><div class="dsicons"><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="sparkles"
+  class="lucide lucide-sparkles"
+  xmlns="http://www.w3.org/2000/svg"
+  width="28"
+  height="28"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
+  <path d="M20 2v4" />
+  <path d="M22 4h-4" />
+  <circle cx="4" cy="20" r="2" />
+</svg><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="heart"
+  class="lucide lucide-heart"
+  xmlns="http://www.w3.org/2000/svg"
+  width="28"
+  height="28"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+</svg><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="leaf"
+  class="lucide lucide-leaf"
+  xmlns="http://www.w3.org/2000/svg"
+  width="28"
+  height="28"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20" />
+  <path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13" />
+</svg><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="compass"
+  class="lucide lucide-compass"
+  xmlns="http://www.w3.org/2000/svg"
+  width="28"
+  height="28"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" />
+</svg></div><div class="dsb" data-txt>Lucide icon 粗細 2 · 卡片圓角 28px · 頁碼右下 14px</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>場景</div><div class="dsb" data-txt>活動企劃、社群、教育、親子</div><div class="dsm" data-txt>留白適中（頁邊 88px）· 每頁 ≤55 字</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>頁型</div><div class="chips"><span data-txt data-box>封面</span><span data-txt data-box>章節頁</span><span data-txt data-box>三欄重點</span><span data-txt data-box>左文右圖</span><span data-txt data-box>一頁一數字</span><span data-txt data-box>章節頁</span><span data-txt data-box>步驟流程</span><span data-txt data-box>封底</span></div></div>
+  </div><div class="pn" data-txt>01</div></section>
+<section class="slide cover"><svg class="blob" style="left:-60px;top:-80px;width:300px;height:300px;transform:rotate(20deg);opacity:1" viewBox="0 0 200 200"><path d="M40 20 C 90 -10, 190 20, 180 90 C 170 160, 90 200, 40 170 C -10 140, -10 50, 40 20 Z" fill="#F9C6C0"/></svg><svg class="blob" style="left:1040px;top:-90px;width:320px;height:320px;transform:rotate(-15deg);opacity:1" viewBox="0 0 200 200"><path d="M30 60 C 60 0, 170 10, 190 70 C 210 130, 130 200, 70 190 C 10 180, 0 120, 30 60 Z" fill="#F6E27A"/></svg><svg class="blob" style="left:1080px;top:430px;width:300px;height:300px;transform:rotate(30deg);opacity:1" viewBox="0 0 200 200"><path d="M20 40 C 70 10, 180 0, 195 60 C 210 120, 150 190, 80 195 C 10 200, -30 70, 20 40 Z" fill="#B9CDEB"/></svg><svg class="blob" style="left:260px;top:560px;width:220px;height:220px;transform:rotate(-25deg);opacity:1" viewBox="0 0 200 200"><path d="M40 20 C 90 -10, 190 20, 180 90 C 170 160, 90 200, 40 170 C -10 140, -10 50, 40 20 Z" fill="#CDB8E6"/></svg><svg class="blob" style="left:780px;top:520px;width:160px;height:160px;transform:rotate(10deg);opacity:1" viewBox="0 0 200 200"><path d="M30 60 C 60 0, 170 10, 190 70 C 210 130, 130 200, 70 190 C 10 180, 0 120, 30 60 Z" fill="#9DC183"/></svg><div class="mark" data-txt>跳跳市集</div><div class="block" data-box><p class="eyebrow" data-txt>HOP MARKET</p><h1 data-txt data-lines="跳跳市集
+活動企劃"><span class="hl">跳跳市集</span><br>活動企劃</h1><p class="sub" data-txt>週末，把街口變成市集。</p></div><div class="pn" data-txt>02</div></section>
+<section class="slide section"><svg class="blob" style="left:1000px;top:-60px;width:260px;height:260px;transform:rotate(15deg);opacity:1" viewBox="0 0 200 200"><path d="M20 40 C 70 10, 180 0, 195 60 C 210 120, 150 190, 80 195 C 10 200, -30 70, 20 40 Z" fill="#F6E27A"/></svg><svg class="blob" style="left:-40px;top:500px;width:240px;height:240px;transform:rotate(-10deg);opacity:1" viewBox="0 0 200 200"><path d="M40 20 C 90 -10, 190 20, 180 90 C 170 160, 90 200, 40 170 C -10 140, -10 50, 40 20 Z" fill="#F9C6C0"/></svg><div class="mark" data-txt>跳跳市集</div><div class="secnum" data-txt>01</div><h2 data-txt>市集</h2><div class="pn" data-txt>03</div></section>
+<section class="slide content"><svg class="blob" style="left:1000px;top:-60px;width:260px;height:260px;transform:rotate(15deg);opacity:1" viewBox="0 0 200 200"><path d="M20 40 C 70 10, 180 0, 195 60 C 210 120, 150 190, 80 195 C 10 200, -30 70, 20 40 Z" fill="#F6E27A"/></svg><svg class="blob" style="left:-40px;top:500px;width:240px;height:240px;transform:rotate(-10deg);opacity:1" viewBox="0 0 200 200"><path d="M40 20 C 90 -10, 190 20, 180 90 C 170 160, 90 200, 40 170 C -10 140, -10 50, 40 20 Z" fill="#F9C6C0"/></svg><div class="mark" data-txt>跳跳市集</div><h2 data-txt>三件事</h2><div class="grid"><div class="card" data-box><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="sparkles"
+  class="lucide lucide-sparkles"
+  xmlns="http://www.w3.org/2000/svg"
+  width="40"
+  height="40"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
+  <path d="M20 2v4" />
+  <path d="M22 4h-4" />
+  <circle cx="4" cy="20" r="2" />
+</svg><strong data-txt>週末限定</strong><p data-txt>每月第一個週六。</p></div><div class="card" data-box><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="heart"
+  class="lucide lucide-heart"
+  xmlns="http://www.w3.org/2000/svg"
+  width="40"
+  height="40"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+</svg><strong data-txt>親子友善</strong><p data-txt>有遊戲區，有奶瓶溫水。</p></div><div class="card" data-box><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="leaf"
+  class="lucide lucide-leaf"
+  xmlns="http://www.w3.org/2000/svg"
+  width="40"
+  height="40"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20" />
+  <path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13" />
+</svg><strong data-txt>零廢棄</strong><p data-txt>自備容器折 10 元。</p></div></div><div class="pn" data-txt>04</div></section>
+<section class="slide split"><div class="mark" data-txt>跳跳市集</div><h2 data-txt>一場市集的樣子</h2>
+  <div class="cols"><div class="lines"><p data-txt>40 個攤位，一半是吃的。</p><p data-txt>舞台每小時一組表演。</p><p data-txt>下午四點，一起收攤。</p></div><div class="photo" data-box><span data-txt>照片佔位：搜尋 outdoor market crowd colorful daytime</span></div></div><div class="pn" data-txt>05</div></section>
+<section class="slide stat"><div class="mark" data-txt>跳跳市集</div><div class="num" data-txt>6,000 人</div><p data-txt>上一場市集的來客數。</p><p class="note" data-txt>示意數字，換成你的。</p><div class="pn" data-txt>06</div></section>
+<section class="slide section"><svg class="blob" style="left:1000px;top:-60px;width:260px;height:260px;transform:rotate(15deg);opacity:1" viewBox="0 0 200 200"><path d="M20 40 C 70 10, 180 0, 195 60 C 210 120, 150 190, 80 195 C 10 200, -30 70, 20 40 Z" fill="#F6E27A"/></svg><svg class="blob" style="left:-40px;top:500px;width:240px;height:240px;transform:rotate(-10deg);opacity:1" viewBox="0 0 200 200"><path d="M40 20 C 90 -10, 190 20, 180 90 C 170 160, 90 200, 40 170 C -10 140, -10 50, 40 20 Z" fill="#F9C6C0"/></svg><div class="mark" data-txt>跳跳市集</div><div class="secnum" data-txt>02</div><h2 data-txt>報名</h2><div class="pn" data-txt>07</div></section>
+<section class="slide steps"><div class="mark" data-txt>跳跳市集</div><h2 data-txt>三步開始</h2><div class="row"><div class="step" data-box><div class="n" data-txt>01</div><strong data-txt>填表</strong><p data-txt>三分鐘，寫你賣什麼。</p></div><div class="step" data-box><div class="n" data-txt>02</div><strong data-txt>審核</strong><p data-txt>一週內回覆。</p></div><div class="step" data-box><div class="n" data-txt>03</div><strong data-txt>擺攤</strong><p data-txt>週六早上八點進場。</p></div></div><div class="pn" data-txt>08</div></section>
+<section class="slide closing"><svg class="blob" style="left:1000px;top:-60px;width:260px;height:260px;transform:rotate(15deg);opacity:1" viewBox="0 0 200 200"><path d="M20 40 C 70 10, 180 0, 195 60 C 210 120, 150 190, 80 195 C 10 200, -30 70, 20 40 Z" fill="#F6E27A"/></svg><svg class="blob" style="left:-40px;top:500px;width:240px;height:240px;transform:rotate(-10deg);opacity:1" viewBox="0 0 200 200"><path d="M40 20 C 90 -10, 190 20, 180 90 C 170 160, 90 200, 40 170 C -10 140, -10 50, 40 20 Z" fill="#F9C6C0"/></svg><div class="mark" data-txt>跳跳市集</div><h2 data-txt>下個週六，街口見。</h2><p class="contact" data-txt>hop@market.example（示意，換成你的）</p><div class="pn" data-txt>09</div></section>
+
+</body></html>

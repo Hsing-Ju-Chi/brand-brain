@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>北斗電商 2025 年度回顧｜brand-brain 範本「便當格」</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--primary:#1F2937;--bg:#EEF1F5;--ink:#1F2937;--accent:#2563EB;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#1F2937;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;font-weight:400;color:var(--ink)}
+  .slide{width:1280px;height:720px;margin:0 auto 24px;padding:72px;background:var(--bg);position:relative;overflow:hidden;display:flex;flex-direction:column}
+  .slide > *{position:relative;z-index:1}
+  h1,h2,.num,.secnum{font-family:"Noto Sans TC","PingFang TC",serif;font-weight:700;color:var(--primary)}
+  h1{font-size:72px;line-height:1.2} h2{font-size:40px;line-height:1.3}
+  p{font-size:22px;line-height:1.6} .note{font-size:14px;color:var(--primary);opacity:.85}
+  .mark{position:absolute;top:40px;right:72px;font-family:"Noto Sans TC",serif;font-weight:700;font-size:18px;letter-spacing:.3em;color:var(--primary);z-index:2}
+  .pn{position:absolute;bottom:32px;right:72px;font-size:14px;color:var(--primary);z-index:2}
+  .cover{justify-content:flex-end} .cover .eyebrow{font-size:16px;letter-spacing:.3em;color:var(--accent);margin-bottom:20px}
+  .cover .sub{margin-top:20px} .cover .rule{height:3px;background:var(--primary);width:120px;margin-top:40px}
+  .section{background:#1F2937;justify-content:center}
+  .section .secnum{font-size:120px;line-height:1;color:#EEF1F5;opacity:.35}
+  .section h2{color:#EEF1F5;font-size:56px;margin-top:8px}
+  .section .mark,.section .pn{color:#EEF1F5}
+  .content .grid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-content:center;margin-top:24px}
+  .card{padding:32px;border-radius:24px}
+  .card svg{color:var(--primary);margin-bottom:20px;display:block} .card strong{display:block;font-size:22px;font-weight:500;color:var(--primary);margin-bottom:8px}
+  .split .cols{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:24px}
+  .split .lines p{padding:14px 0;border-top:1px solid var(--primary)} .split .lines p:first-child{border-top:none}
+  .split .photo{aspect-ratio:4/3}
+  .stat{justify-content:center} .num{font-size:200px;line-height:1;color:var(--accent)} .stat p{margin-top:24px;max-width:640px}
+  .steps .row{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-content:center;margin-top:24px}
+  .step{padding:28px 32px;border-radius:24px;border-top:3px solid var(--accent)}
+  .step .n{font-family:"Noto Sans TC",serif;font-weight:700;font-size:40px;color:var(--accent);line-height:1}
+  .step strong{display:block;font-size:22px;font-weight:500;color:var(--primary);margin:14px 0 6px}
+  .closing{justify-content:center;gap:32px} .closing .contact{color:var(--primary);font-size:22px}
+  /* Design System 頁 */
+  .ds .dsgrid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:20px;margin-top:20px}
+  .dsbox{padding:24px 26px;border-radius:24px;background:rgba(255,255,255,.5);border:1px solid rgba(31,41,55,0.18);display:flex;flex-direction:column;gap:12px;min-height:0}
+  .dsl{font-size:12px;letter-spacing:.25em;color:var(--accent);font-weight:500}
+  .sw{display:flex;gap:10px;flex-wrap:wrap} .sw div{width:64px} .sw i{display:block;height:44px;border-radius:12px;border:1px solid rgba(31,41,55,0.15)} .sw span{display:block;font-size:11px;margin-top:4px;color:var(--ink);opacity:.8;font-family:ui-monospace,Menlo,monospace}
+  .dsh{font-family:"Noto Sans TC",serif;font-weight:700;font-size:34px;line-height:1.2;color:var(--primary)} .dsb{font-size:16px;line-height:1.6} .dsm{font-size:12px;opacity:.7}
+  .dsicons{display:flex;gap:16px;align-items:center} .dsicons svg{color:var(--primary)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px} .chips span{font-size:13px;padding:4px 12px;border:1px solid rgba(31,41,55,0.35);border-radius:999px;color:var(--primary)}
+  .dsbase{font-size:15px;line-height:1.6}
+  /* 底稿風格：便當格 */
+  .dd,.blob{position:absolute;z-index:0;pointer-events:none}
+  .photo{background:#1F2937;display:flex;align-items:flex-end;padding:20px;border-radius:24px} .photo span{color:#EEF1F5;font-size:14px}
+  .card,.step,.dsbox,.tile{background:#fff;border:none;border-radius:24px;box-shadow:0 8px 24px rgba(31,41,55,.06)}
+  .step{border-top:none} .step .n{color:#2563EB}
+  .cover{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr 1fr;gap:20px;padding:56px}
+  .cover .block{grid-row:1/4;padding:56px;display:flex;flex-direction:column;justify-content:flex-end;background:#1F2937;border-radius:24px}
+  .cover .block h1,.cover .block .eyebrow,.cover .block .sub{color:#EEF1F5} .cover .block .eyebrow{color:#2563EB} .cover .rule{display:none}
+  .tile{padding:28px 32px;display:flex;flex-direction:column;justify-content:center} .tile b{font-size:40px;font-weight:700;color:#2563EB;line-height:1.1} .tile span{font-size:16px;color:#1F2937;opacity:.75}
+  .cover .mark{display:none} .cover .pn{color:#1F2937}
+  .section{background:#1F2937} .section .secnum,.section h2,.section .mark,.section .pn{color:#EEF1F5}
+  body.bake [data-txt]{visibility:hidden}
+  body.bake.native [data-box]{visibility:hidden}
+  body.bake.native [data-box] [data-icon]{visibility:hidden}
+</style></head>
+<body class="">
+<section class="slide ds"><div class="mark" data-txt>北斗電商</div><h2 data-txt>Design System · 便當格</h2>
+  <div class="dsgrid">
+   <div class="dsbox" data-box><div class="dsl" data-txt>色票 60-30-10</div><div class="sw"><div><i style="background:#1F2937" data-box></i><span data-txt>#1F2937</span></div><div><i style="background:#EEF1F5" data-box></i><span data-txt>#EEF1F5</span></div><div><i style="background:#1F2937" data-box></i><span data-txt>#1F2937</span></div><div><i style="background:#2563EB" data-box></i><span data-txt>#2563EB</span></div></div><div class="dsm" data-txt>主色 · 背景 · 文字 · 強調</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>字型</div><div class="dsh" data-txt>標題 Noto Sans TC</div><div class="dsb" data-txt>內文 Noto Sans TC · 字級 72 / 40 / 22 / 14 · 行距 1.6</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>底稿風格</div><div class="dsh" data-txt>便當格</div><div class="dsbase" data-txt>沒有底稿圖層，靠白色圓角格子；封面是深底大格＋三格數字；章節頁深底</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>元件</div><div class="dsicons"><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="target"
+  class="lucide lucide-target"
+  xmlns="http://www.w3.org/2000/svg"
+  width="28"
+  height="28"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <circle cx="12" cy="12" r="6" />
+  <circle cx="12" cy="12" r="2" />
+</svg><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="users"
+  class="lucide lucide-users"
+  xmlns="http://www.w3.org/2000/svg"
+  width="28"
+  height="28"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+  <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+  <circle cx="9" cy="7" r="4" />
+</svg><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="zap"
+  class="lucide lucide-zap"
+  xmlns="http://www.w3.org/2000/svg"
+  width="28"
+  height="28"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" />
+</svg><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="compass"
+  class="lucide lucide-compass"
+  xmlns="http://www.w3.org/2000/svg"
+  width="28"
+  height="28"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" />
+</svg></div><div class="dsb" data-txt>Lucide icon 粗細 2 · 卡片圓角 24px · 頁碼右下 14px</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>場景</div><div class="dsb" data-txt>數據報告、年度回顧、產品總覽</div><div class="dsm" data-txt>留白適中（頁邊 72px）· 每頁 ≤60 字</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>頁型</div><div class="chips"><span data-txt data-box>封面</span><span data-txt data-box>章節頁</span><span data-txt data-box>三欄重點</span><span data-txt data-box>左文右圖</span><span data-txt data-box>一頁一數字</span><span data-txt data-box>章節頁</span><span data-txt data-box>步驟流程</span><span data-txt data-box>封底</span></div></div>
+  </div><div class="pn" data-txt>01</div></section>
+<section class="slide cover"><div class="mark" data-txt>北斗電商</div><div class="block" data-box><p class="eyebrow" data-txt>BEIDOU COMMERCE</p><h1 data-txt data-lines="北斗電商
+2025 年度回顧">北斗電商<br>2025 年度回顧</h1><p class="sub" data-txt>數字自己會說話。</p></div>
+  <div class="tile" data-box><b data-txt>34%</b><span data-txt>年營收成長</span></div>
+  <div class="tile" data-box><b data-txt>12 萬</b><span data-txt>新增會員</span></div>
+  <div class="tile" data-box><b data-txt>1.8 天</b><span data-txt>平均到貨</span></div><div class="pn" data-txt>02</div></section>
+<section class="slide section"><div class="mark" data-txt>北斗電商</div><div class="secnum" data-txt>01</div><h2 data-txt>成績</h2><div class="pn" data-txt>03</div></section>
+<section class="slide content"><div class="mark" data-txt>北斗電商</div><h2 data-txt>三件事</h2><div class="grid"><div class="card" data-box><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="target"
+  class="lucide lucide-target"
+  xmlns="http://www.w3.org/2000/svg"
+  width="40"
+  height="40"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <circle cx="12" cy="12" r="6" />
+  <circle cx="12" cy="12" r="2" />
+</svg><strong data-txt>營收</strong><p data-txt>年增 34%，四季都成長。</p></div><div class="card" data-box><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="users"
+  class="lucide lucide-users"
+  xmlns="http://www.w3.org/2000/svg"
+  width="40"
+  height="40"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+  <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+  <circle cx="9" cy="7" r="4" />
+</svg><strong data-txt>會員</strong><p data-txt>新增 12 萬，回購率 41%。</p></div><div class="card" data-box><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="zap"
+  class="lucide lucide-zap"
+  xmlns="http://www.w3.org/2000/svg"
+  width="40"
+  height="40"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" />
+</svg><strong data-txt>物流</strong><p data-txt>平均 1.8 天到貨。</p></div></div><div class="pn" data-txt>04</div></section>
+<section class="slide split"><div class="mark" data-txt>北斗電商</div><h2 data-txt>最有效的一件事</h2>
+  <div class="cols"><div class="lines"><p data-txt>把結帳從五步縮到兩步。</p><p data-txt>放棄率從 62% 降到 38%。</p><p data-txt>這一項貢獻了年增的一半。</p></div><div class="photo" data-box><span data-txt>照片佔位：搜尋 warehouse conveyor / dashboard on screen</span></div></div><div class="pn" data-txt>05</div></section>
+<section class="slide stat"><div class="mark" data-txt>北斗電商</div><div class="num" data-txt>34%</div><p data-txt>年營收成長，連續第三年雙位數。</p><p class="note" data-txt>示意數字，換成你的。</p><div class="pn" data-txt>06</div></section>
+<section class="slide section"><div class="mark" data-txt>北斗電商</div><div class="secnum" data-txt>02</div><h2 data-txt>明年</h2><div class="pn" data-txt>07</div></section>
+<section class="slide steps"><div class="mark" data-txt>北斗電商</div><h2 data-txt>三步開始</h2><div class="row"><div class="step" data-box><div class="n" data-txt>01</div><strong data-txt>會員分級</strong><p data-txt>Q1 上線，分三級。</p></div><div class="step" data-box><div class="n" data-txt>02</div><strong data-txt>自有物流</strong><p data-txt>Q2 覆蓋北北基。</p></div><div class="step" data-box><div class="n" data-txt>03</div><strong data-txt>第二品類</strong><p data-txt>Q3 開賣。</p></div></div><div class="pn" data-txt>08</div></section>
+<section class="slide closing"><div class="mark" data-txt>北斗電商</div><h2 data-txt>明年，再多一格。</h2><p class="contact" data-txt>ir@beidou.example（示意，換成你的）</p><div class="pn" data-txt>09</div></section>
+
+</body></html>

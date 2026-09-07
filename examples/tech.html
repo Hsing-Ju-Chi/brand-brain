@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nova Labs 產品發表｜brand-brain 範本「玻璃科技」</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;900&display=swap" rel="stylesheet">
+<style>
+  :root{--primary:#7DD3FC;--bg:#0B1220;--ink:#E5E7EB;--accent:#F59E0B;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#E5E7EB;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;font-weight:300;color:var(--ink)}
+  .slide{width:1280px;height:720px;margin:0 auto 24px;padding:96px;background:var(--bg);position:relative;overflow:hidden;display:flex;flex-direction:column}
+  .slide > *{position:relative;z-index:1}
+  h1,h2,.num,.secnum{font-family:"Noto Sans TC","PingFang TC",serif;font-weight:900;color:var(--primary)}
+  h1{font-size:72px;line-height:1.2} h2{font-size:40px;line-height:1.3}
+  p{font-size:22px;line-height:1.6} .note{font-size:14px;color:var(--primary);opacity:.85}
+  .mark{position:absolute;top:56px;right:96px;font-family:"Noto Sans TC",serif;font-weight:900;font-size:18px;letter-spacing:.3em;color:var(--primary);z-index:2}
+  .pn{position:absolute;bottom:32px;right:96px;font-size:14px;color:var(--primary);z-index:2}
+  .cover{justify-content:flex-end} .cover .eyebrow{font-size:16px;letter-spacing:.3em;color:var(--accent);margin-bottom:20px}
+  .cover .sub{margin-top:20px} .cover .rule{height:3px;background:var(--primary);width:120px;margin-top:40px}
+  .section{background:#7DD3FC;justify-content:center}
+  .section .secnum{font-size:120px;line-height:1;color:#0B1220;opacity:.35}
+  .section h2{color:#0B1220;font-size:56px;margin-top:8px}
+  .section .mark,.section .pn{color:#0B1220}
+  .content .grid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-content:center;margin-top:24px}
+  .card{padding:32px;border-radius:20px}
+  .card svg{color:var(--primary);margin-bottom:20px;display:block} .card strong{display:block;font-size:22px;font-weight:500;color:var(--primary);margin-bottom:8px}
+  .split .cols{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:24px}
+  .split .lines p{padding:14px 0;border-top:1px solid var(--primary)} .split .lines p:first-child{border-top:none}
+  .split .photo{aspect-ratio:4/3}
+  .stat{justify-content:center} .num{font-size:200px;line-height:1;color:var(--accent)} .stat p{margin-top:24px;max-width:640px}
+  .steps .row{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-content:center;margin-top:24px}
+  .step{padding:28px 32px;border-radius:20px;border-top:3px solid var(--accent)}
+  .step .n{font-family:"Noto Sans TC",serif;font-weight:900;font-size:40px;color:var(--accent);line-height:1}
+  .step strong{display:block;font-size:22px;font-weight:500;color:var(--primary);margin:14px 0 6px}
+  .closing{justify-content:center;gap:32px} .closing .contact{color:var(--primary);font-size:22px}
+  /* Design System 頁 */
+  .ds .dsgrid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:20px;margin-top:20px}
+  .dsbox{padding:24px 26px;border-radius:20px;background:rgba(255,255,255,.5);border:1px solid rgba(125,211,252,0.18);display:flex;flex-direction:column;gap:12px;min-height:0}
+  .dsl{font-size:12px;letter-spacing:.25em;color:var(--accent);font-weight:500}
+  .sw{display:flex;gap:10px;flex-wrap:wrap} .sw div{width:64px} .sw i{display:block;height:44px;border-radius:12px;border:1px solid rgba(125,211,252,0.15)} .sw span{display:block;font-size:11px;margin-top:4px;color:var(--ink);opacity:.8;font-family:ui-monospace,Menlo,monospace}
+  .dsh{font-family:"Noto Sans TC",serif;font-weight:900;font-size:34px;line-height:1.2;color:var(--primary)} .dsb{font-size:16px;line-height:1.6} .dsm{font-size:12px;opacity:.7}
+  .dsicons{display:flex;gap:16px;align-items:center} .dsicons svg{color:var(--primary)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px} .chips span{font-size:13px;padding:4px 12px;border:1px solid rgba(125,211,252,0.35);border-radius:999px;color:var(--primary)}
+  .dsbase{font-size:15px;line-height:1.6}
+  /* 底稿風格：玻璃擬態 */
+  .dd,.blob{position:absolute;z-index:0;pointer-events:none}
+  .photo{background:#7DD3FC;display:flex;align-items:flex-end;padding:20px;border-radius:20px} .photo span{color:#0B1220;font-size:14px}
+  .slide::before{content:"";position:absolute;inset:0;background:radial-gradient(520px 420px at 78% 22%,rgba(125,211,252,0.28),transparent 70%),radial-gradient(420px 360px at 12% 88%,rgba(245,158,11,0.16),transparent 70%);pointer-events:none}
+  .slide::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(229,231,235,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(229,231,235,0.05) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(900px 600px at 50% 50%,#000 40%,transparent 100%);mask-image:radial-gradient(900px 600px at 50% 50%,#000 40%,transparent 100%);pointer-events:none}
+  .card,.step,.cover .block,.dsbox{background:rgba(229,231,235,0.06);border:1px solid rgba(229,231,235,0.16);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:20px;box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+  .cover .block{padding:48px 56px;width:760px}
+  .section{background:#0B1220} .section .secnum,.section h2,.section .mark,.section .pn{color:#7DD3FC}
+  body.bake [data-txt]{visibility:hidden}
+  body.bake.native [data-box]{visibility:hidden}
+  body.bake.native [data-box] [data-icon]{visibility:hidden}
+</style></head>
+<body class="">
+<section class="slide ds"><div class="mark" data-txt>Nova Labs</div><h2 data-txt>Design System · 玻璃科技</h2>
+  <div class="dsgrid">
+   <div class="dsbox" data-box><div class="dsl" data-txt>色票 60-30-10</div><div class="sw"><div><i style="background:#7DD3FC" data-box></i><span data-txt>#7DD3FC</span></div><div><i style="background:#0B1220" data-box></i><span data-txt>#0B1220</span></div><div><i style="background:#E5E7EB" data-box></i><span data-txt>#E5E7EB</span></div><div><i style="background:#F59E0B" data-box></i><span data-txt>#F59E0B</span></div></div><div class="dsm" data-txt>主色 · 背景 · 文字 · 強調</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>字型</div><div class="dsh" data-txt>標題 Noto Sans TC</div><div class="dsb" data-txt>內文 Noto Sans TC · 字級 72 / 40 / 22 / 14 · 行距 1.6</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>底稿風格</div><div class="dsh" data-txt>玻璃擬態</div><div class="dsbase" data-txt>暗底兩團柔光＋淡網格；卡片與封面文字塊是霧面玻璃面板</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>元件</div><div class="dsicons"><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="zap"
+  class="lucide lucide-zap"
+  xmlns="http://www.w3.org/2000/svg"
+  width="28"
+  height="28"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" />
+</svg><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="target"
+  class="lucide lucide-target"
+  xmlns="http://www.w3.org/2000/svg"
+  width="28"
+  height="28"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <circle cx="12" cy="12" r="6" />
+  <circle cx="12" cy="12" r="2" />
+</svg><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="sparkles"
+  class="lucide lucide-sparkles"
+  xmlns="http://www.w3.org/2000/svg"
+  width="28"
+  height="28"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
+  <path d="M20 2v4" />
+  <path d="M22 4h-4" />
+  <circle cx="4" cy="20" r="2" />
+</svg><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="compass"
+  class="lucide lucide-compass"
+  xmlns="http://www.w3.org/2000/svg"
+  width="28"
+  height="28"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" />
+</svg></div><div class="dsb" data-txt>Lucide icon 粗細 1.5 · 卡片圓角 20px · 頁碼右下 14px</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>場景</div><div class="dsb" data-txt>產品發表、SaaS、技術分享</div><div class="dsm" data-txt>留白大（頁邊 96px）· 每頁 ≤50 字</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>頁型</div><div class="chips"><span data-txt data-box>封面</span><span data-txt data-box>章節頁</span><span data-txt data-box>三欄重點</span><span data-txt data-box>左文右圖</span><span data-txt data-box>一頁一數字</span><span data-txt data-box>章節頁</span><span data-txt data-box>步驟流程</span><span data-txt data-box>封底</span></div></div>
+  </div><div class="pn" data-txt>01</div></section>
+<section class="slide cover"><div class="mark" data-txt>Nova Labs</div><div class="block" data-box><p class="eyebrow" data-txt>NOVA LABS</p><h1 data-txt data-lines="Nova Labs
+產品發表">Nova Labs<br>產品發表</h1><p class="sub" data-txt>資料同步，不用等。</p></div><div class="pn" data-txt>02</div></section>
+<section class="slide section"><div class="mark" data-txt>Nova Labs</div><div class="secnum" data-txt>01</div><h2 data-txt>產品</h2><div class="pn" data-txt>03</div></section>
+<section class="slide content"><div class="mark" data-txt>Nova Labs</div><h2 data-txt>三件事</h2><div class="grid"><div class="card" data-box><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="zap"
+  class="lucide lucide-zap"
+  xmlns="http://www.w3.org/2000/svg"
+  width="40"
+  height="40"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" />
+</svg><strong data-txt>即時同步</strong><p data-txt>毫秒級，跨裝置一致。</p></div><div class="card" data-box><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="target"
+  class="lucide lucide-target"
+  xmlns="http://www.w3.org/2000/svg"
+  width="40"
+  height="40"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <circle cx="12" cy="12" r="6" />
+  <circle cx="12" cy="12" r="2" />
+</svg><strong data-txt>零信任架構</strong><p data-txt>每一次存取都驗證。</p></div><div class="card" data-box><!-- @license lucide-static v1.41.0 - ISC -->
+<svg data-icon="sparkles"
+  class="lucide lucide-sparkles"
+  xmlns="http://www.w3.org/2000/svg"
+  width="40"
+  height="40"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
+  <path d="M20 2v4" />
+  <path d="M22 4h-4" />
+  <circle cx="4" cy="20" r="2" />
+</svg><strong data-txt>開放 API</strong><p data-txt>三行程式接上。</p></div></div><div class="pn" data-txt>04</div></section>
+<section class="slide split"><div class="mark" data-txt>Nova Labs</div><h2 data-txt>它怎麼運作</h2>
+  <div class="cols"><div class="lines"><p data-txt>每筆變更先寫本機，再背景同步。</p><p data-txt>衝突用時間戳自動合併，不問人。</p><p data-txt>離線也能改，回線自動補齊。</p></div><div class="photo" data-box><span data-txt>照片佔位：搜尋 server room blue light / abstract data lines</span></div></div><div class="pn" data-txt>05</div></section>
+<section class="slide stat"><div class="mark" data-txt>Nova Labs</div><div class="num" data-txt>99.98%</div><p data-txt>過去 12 個月的服務可用率。</p><p class="note" data-txt>示意數字，換成你的。</p><div class="pn" data-txt>06</div></section>
+<section class="slide section"><div class="mark" data-txt>Nova Labs</div><div class="secnum" data-txt>02</div><h2 data-txt>導入</h2><div class="pn" data-txt>07</div></section>
+<section class="slide steps"><div class="mark" data-txt>Nova Labs</div><h2 data-txt>三步開始</h2><div class="row"><div class="step" data-box><div class="n" data-txt>01</div><strong data-txt>接上</strong><p data-txt>API 金鑰，三行程式。</p></div><div class="step" data-box><div class="n" data-txt>02</div><strong data-txt>對映</strong><p data-txt>選要同步的欄位。</p></div><div class="step" data-box><div class="n" data-txt>03</div><strong data-txt>上線</strong><p data-txt>灰度 10% 開始，一週全量。</p></div></div><div class="pn" data-txt>08</div></section>
+<section class="slide closing"><div class="mark" data-txt>Nova Labs</div><h2 data-txt>不用等，就是最好的功能。</h2><p class="contact" data-txt>team@novalabs.example（示意，換成你的）</p><div class="pn" data-txt>09</div></section>
+
+</body></html>
