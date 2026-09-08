@@ -6,7 +6,7 @@ description: Use when 使用者要 AI 做出符合自家品牌的簡報：說「
 # 簡報品牌大腦 Brand Brain
 
 > 出處：阿幸（IG @hsing.daily）。
-> 兩種用法：① Claude 使用者：整個資料夾放進 `~/.claude/skills/`；② 其他 AI（ChatGPT / Gemini）：把本檔全文（含 references/ 兩檔）貼進對話開頭或自訂指令。
+> 裝法：① Claude Code：整個資料夾放進 `~/.claude/skills/`；② Codex、Gemini CLI：放進 `~/.agents/skills/`（兩家共用同一個位置）；③ Claude 網頁版或 App：壓成 ZIP 在「自訂 → Skills」上傳（雲端沙盒：規則全在，但查不到本機字型、不燒 PPTX）；④ ChatGPT Business／Enterprise／Edu：在 Skills 上傳；其他 ChatGPT 方案與 Gemini 網頁版：把本檔全文（含 references/ 兩檔）貼進自訂指令或 Gem。
 
 ## 核心原則
 
@@ -31,7 +31,7 @@ description: Use when 使用者要 AI 做出符合自家品牌的簡報：說「
 | 別人的簡報當參考 | 同六樣，但照color-presets.md「從參考品牌抽色」的規矩：標參考值、靈感非複製、不用對方 logo 與圖形 |
 | logo | 主色與強調色 |
 | 品牌規範 | 全部照規範，不加不減 |
-| PPTX 檔 | Claude Code 環境直接讀主題色與字型（`python-pptx` 或解壓讀 `ppt/theme/theme1.xml`）；其他環境請使用者改給 PDF 或截圖 |
+| PPTX 檔 | 本機終端環境（Claude Code、Codex、Gemini CLI）直接讀主題色與字型（`python-pptx` 或解壓讀 `ppt/theme/theme1.xml`）；網頁版或沙盒環境請使用者改給 PDF 或截圖 |
 
 **從簡報只抽這六樣，寫進大腦就丟掉原檔：**
 1. 背景底稿：底色，有沒有固定的色帶、邊框、幾何圖形
@@ -61,7 +61,7 @@ description: Use when 使用者要 AI 做出符合自家品牌的簡報：說「
 
 **第 3 題：字型。** 只問「有指定字型嗎？」
 
-- 有指定 → **先把中文名換成英文檔名再查**（字型檔名都是英文，直接 grep 中文一定查無）：思源黑體＝`SourceHanSans`／`NotoSansCJK`／`NotoSansTC`；思源宋體＝`SourceHanSerif`／`NotoSerifCJK`／`NotoSerifTC`；台北黑體＝`TaipeiSans`；粉圓＝`Huninn`；霞鶩文楷＝`LXGWWenKai`；其他字型問使用者英文名。**查本機**：Claude Code 環境跑 `ls ~/Library/Fonts /Library/Fonts /System/Library/Fonts | grep -i 英文名`（macOS）；其他環境問使用者「這個字型你電腦有裝嗎」。有裝 → `@font-face` 用 `local()`，並找 Google Fonts 當後備。沒裝 → 查 Google Fonts（一樣用英文名）：對 `https://fonts.googleapis.com/css2?family=英文名` 發請求，回 200 就線上載入，回 400 就從範本檔挑最接近的免費字型代替，**明講「這是代替，正式版請自行替換」**。
+- 有指定 → **先把中文名換成英文檔名再查**（字型檔名都是英文，直接 grep 中文一定查無）：思源黑體＝`SourceHanSans`／`NotoSansCJK`／`NotoSansTC`；思源宋體＝`SourceHanSerif`／`NotoSerifCJK`／`NotoSerifTC`；台北黑體＝`TaipeiSans`；粉圓＝`Huninn`；霞鶩文楷＝`LXGWWenKai`；其他字型問使用者英文名。**查本機**：本機終端環境（Claude Code、Codex、Gemini CLI）跑 `ls ~/Library/Fonts /Library/Fonts /System/Library/Fonts | grep -i 英文名`（macOS）；網頁版或沙盒環境問使用者「這個字型你電腦有裝嗎」。有裝 → `@font-face` 用 `local()`，並找 Google Fonts 當後備。沒裝 → 查 Google Fonts（一樣用英文名）：對 `https://fonts.googleapis.com/css2?family=英文名` 發請求，回 200 就線上載入，回 400 就從範本檔挑最接近的免費字型代替，**明講「這是代替，正式版請自行替換」**。
 - 沒指定 → 從 color-presets.md 給 2 個組合，一句差異，讓他選。
 
 **排版不問。** 留白、對齊、圓角、陰影、行距、字級、每頁字量全部跟著範本的版型預設走；使用者要改哪條，直接說一句就改。
@@ -82,14 +82,14 @@ description: Use when 使用者要 AI 做出符合自家品牌的簡報：說「
 
 輸入：品牌大腦檔＋這次的內容（大綱、文章、逐字稿都行）。只給頁名沒給內容 → 用【待填】標示，**不編數字、不編事實**。
 
-輸出：一份完整 HTML 簡報（16:9，每頁 1280×720），單一檔案；字型走 Google Fonts 或 `local()`；icon 以內嵌 SVG 放進檔案；使用者提供的圖放 `assets/`。瀏覽器打開就能全螢幕播，也能印成 PDF。
+輸出：預設交可編輯的 PPTX（走下面的燒圖管線）並附 HTML 原稿；使用者指定只要 HTML，或要 Google Slides，就照說的給（Google Slides：交 PPTX，請使用者上傳雲端硬碟用 Slides 開啟）。HTML 規格：16:9，每頁 1280×720，單一檔案；字型走 Google Fonts 或 `local()`；icon 以內嵌 SVG 放進檔案；使用者提供的圖放 `assets/`；瀏覽器打開就能全螢幕播，也能印成 PDF。
 
-使用者要 PPTX 時：Claude Code 有 `python3` 和 Chrome → 走 `references/pptx-bake.md` 的燒圖管線（底稿層燒成圖鋪滿，文字、卡片框、icon 原生可編輯；手繪線稿的卡片框是風格本體，跟底稿一起燒進圖；`scripts/pptx_from_spec.py` 直接用），HTML 一併給；沒有 Chrome 或 python 的環境 → 給 HTML，並說明可用瀏覽器印成 PDF，PPTX 要在 Claude Code 版做。
+PPTX 怎麼做：本機終端環境（Claude Code、Codex、Gemini CLI）有 `python3` 和 Chrome → 走 `references/pptx-bake.md` 的燒圖管線（底稿層燒成圖鋪滿，文字、卡片框、icon 原生可編輯；手繪線稿的卡片框是風格本體，跟底稿一起燒進圖；`scripts/pptx_from_spec.py` 直接用），HTML 一併給；有 python 沒 Chrome（例如 Claude 網頁版沙盒）→ 用 `python-pptx` 出無底稿的 PPTX，交件時列出底稿沒做到的部分；兩者都沒有 → 給 HTML，並說明可用瀏覽器印成 PDF。燒圖管線目前只在 Claude Code 驗過。
 
 **硬規則：**
 1. 顏色只准用色票四色。要新色，先問。
 2. 字型照大腦載入、附 fallback；字級全簡報一套。
-3. 版型預設照做，含垂直分布：內容不到上限一半時，重點區垂直置中或字級放大，不留空半頁。一頁一重點，內容多就拆頁，不縮字硬塞。
+3. 版型預設照做，含垂直分布：內容不到半頁時，重點區垂直置中或字級放大，不留空半頁。字級全簡報一套、不准縮；一頁講一件事，內文超過一個版面裝不下，或超過三個並列重點，就拆頁，或改用頁型庫裡能並列更多重點的頁型，不縮字硬塞。
    頁型照大腦的「頁型庫」排：**第 1 頁 Design System**（色票、字型、底稿、元件、場景、頁型六格）、封面、章節頁（每個大段落前一頁）、三欄重點、左文右圖、一頁一數字、步驟流程（有順序才用編號）、封底（一句話＋聯絡方式）。內容多就重複內容頁型，不發明新頁型；長什麼樣看 `examples/` 對應範本那份。
    底稿照大腦的「底稿風格」做成整份每頁共用的一層（CSS 寫法見 color-presets.md「底稿風格庫」），文字區的底稿元素透明度不超過 .3。
 4. 大腦裡的 `TODO` 用到時：交付先放佔位（虛線框＋「待提供」），在交付訊息裡問，不卡交付、不猜。
@@ -102,7 +102,7 @@ description: Use when 使用者要 AI 做出符合自家品牌的簡報：說「
 **交付前自我檢查，附在回覆裡：**
 - [ ] 用色都在色票四色內
 - [ ] 字型載入正確、有 fallback、字級一套
-- [ ] 每頁字量沒超過預設上限
+- [ ] 沒有頁面因為塞字而縮了字級
 - [ ] 留白、對齊、圓角、陰影照版型預設
 - [ ] icon 同一套、同粗細
 - [ ] 每張圖片的來源都在授權表內
