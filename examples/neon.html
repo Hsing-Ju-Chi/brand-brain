@@ -26,6 +26,7 @@
   .split .cols{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:24px}
   .split .lines p{padding:14px 0;border-top:1px solid var(--primary)} .split .lines p:first-child{border-top:none}
   .split .photo{aspect-ratio:4/3}
+  .long .body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:18px;margin-top:24px;max-width:1040px}
   .stat{justify-content:center} .num{font-size:200px;line-height:1;color:var(--accent)} .stat p{margin-top:24px;max-width:640px}
   .steps .row{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-content:center;margin-top:24px}
   .step{padding:28px 32px;border-radius:0px;border-top:3px solid var(--accent)}
@@ -42,7 +43,7 @@
   .dsicons{display:flex;gap:16px;align-items:center} .dsicons svg{color:var(--primary)}
   .chips{display:flex;flex-wrap:wrap;gap:8px} .chips span{font-size:13px;padding:4px 12px;border:1px solid rgba(198,255,0,0.35);border-radius:999px;color:var(--primary)}
   .dsbase{font-size:15px;line-height:1.6}
-  /* 底稿風格：螢光撞色 */
+  /* 底稿風格：撞色分割 */
   .dd,.blob{position:absolute;z-index:0;pointer-events:none}
   .photo{background:#C6FF00;display:flex;align-items:flex-end;padding:20px;border-radius:0px} .photo span{color:#0F0A1E;font-size:14px}
   .band{position:absolute;right:0;top:0;bottom:0;width:56px;background:#FF3D8A;z-index:0}
@@ -67,7 +68,7 @@
   <div class="dsgrid">
    <div class="dsbox" data-box><div class="dsl" data-txt>色票 60-30-10</div><div class="sw"><div><i style="background:#C6FF00" data-box></i><span data-txt>#C6FF00</span></div><div><i style="background:#0F0A1E" data-box></i><span data-txt>#0F0A1E</span></div><div><i style="background:#F2F2F2" data-box></i><span data-txt>#F2F2F2</span></div><div><i style="background:#FF3D8A" data-box></i><span data-txt>#FF3D8A</span></div><div><i style="background:#2D6BFF" data-box></i><span data-txt>#2D6BFF</span></div></div><div class="dsm" data-txt>主色 · 背景 · 文字 · 強調（後面是底稿輔助色，只用在底稿）</div></div>
    <div class="dsbox" data-box><div class="dsl" data-txt>字型</div><div class="dsh" data-txt>標題 Noto Sans TC</div><div class="dsb" data-txt>內文 Noto Sans TC · 字級 72 / 40 / 22 / 14 · 行距 1.6</div></div>
-   <div class="dsbox" data-box><div class="dsl" data-txt>底稿風格</div><div class="dsh" data-txt>螢光撞色</div><div class="dsbase" data-txt>右側桃紅實色直帶（封面 38%，帶上整條直排英文名；內頁 56px 貼右緣）；沒有漸層；卡片只用桃紅上緣線；標題第二行描邊；章節頁桃紅底</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>底稿風格</div><div class="dsh" data-txt>撞色分割</div><div class="dsbase" data-txt>右側桃紅實色直帶（封面 38%，帶上整條直排英文名；內頁 56px 貼右緣）；沒有漸層；卡片只用桃紅上緣線；標題第二行描邊；章節頁桃紅底</div></div>
    <div class="dsbox" data-box><div class="dsl" data-txt>元件</div><div class="dsicons"><!-- @license lucide-static v1.41.0 - ISC -->
 <svg data-icon="zap"
   class="lucide lucide-zap"
@@ -131,8 +132,8 @@
   <circle cx="12" cy="12" r="10" />
   <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" />
 </svg></div><div class="dsb" data-txt>Lucide icon 粗細 2 · 卡片圓角 0px · 頁碼右下 14px</div></div>
-   <div class="dsbox" data-box><div class="dsl" data-txt>場景</div><div class="dsb" data-txt>潮流品牌、音樂、活動、新品上市</div><div class="dsm" data-txt>留白適中（頁邊 88px）· 每頁 ≤45 字</div></div>
-   <div class="dsbox" data-box><div class="dsl" data-txt>頁型</div><div class="chips"><span data-txt data-box>封面</span><span data-txt data-box>章節頁</span><span data-txt data-box>三欄重點</span><span data-txt data-box>左文右圖</span><span data-txt data-box>一頁一數字</span><span data-txt data-box>章節頁</span><span data-txt data-box>步驟流程</span><span data-txt data-box>封底</span></div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>場景</div><div class="dsb" data-txt>潮流品牌、音樂、活動、新品上市</div><div class="dsm" data-txt>留白適中（頁邊 88px）· 字級不縮，裝不下就拆頁</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>頁型</div><div class="chips"><span data-txt data-box>封面</span><span data-txt data-box>章節頁</span><span data-txt data-box>三欄重點</span><span data-txt data-box>左文右圖</span><span data-txt data-box>長文頁</span><span data-txt data-box>一頁一數字</span><span data-txt data-box>章節頁</span><span data-txt data-box>步驟流程</span><span data-txt data-box>封底</span></div></div>
   </div><div class="pn" data-txt>01</div></section>
 <section class="slide cover"><div class="band"><span>NIGHTSHIFT</span></div><div class="mark" data-txt>夜行</div><div class="block" data-box><p class="eyebrow" data-txt>NIGHTSHIFT · DROP 01</p><h1 data-txt data-lines="夜行
 新品上市">夜行<br><span class="out">新品上市</span></h1><p class="sub" data-txt>天黑以後才開始。</p><div class="meta"><span data-txt>09.12 FRI 20:00</span><span data-txt>300 PCS</span><span data-txt>ONLINE ONLY</span></div></div><div class="pn" data-txt>02</div></section>
@@ -187,9 +188,10 @@
 </svg><strong data-txt>線上先發</strong><p data-txt>週五晚上八點。</p></div></div><div class="pn" data-txt>04</div></section>
 <section class="slide split"><div class="band"><span>NIGHTSHIFT</span></div><div class="mark" data-txt>夜行</div><h2 data-txt>這一季的三件事</h2>
   <div class="cols"><div class="lines"><p data-txt>跟三位在地音樂人合作。</p><p data-txt>每件都有編號。</p><p data-txt>包裝可以拿來當海報。</p></div><div class="photo" data-box><span data-txt>照片佔位：搜尋 concert crowd neon lights night</span></div></div><div class="pn" data-txt>05</div></section>
-<section class="slide stat"><div class="band"><span>NIGHTSHIFT</span></div><div class="mark" data-txt>夜行</div><div class="num" data-txt>300 件</div><p data-txt>首批限量，售完為止。</p><p class="note" data-txt>示意數字，換成你的。</p><div class="pn" data-txt>06</div></section>
-<section class="slide section"><div class="mark" data-txt>夜行</div><div class="secnum" data-txt>02</div><h2 data-txt>上市</h2><div class="pn" data-txt>07</div></section>
-<section class="slide steps"><div class="band"><span>NIGHTSHIFT</span></div><div class="mark" data-txt>夜行</div><h2 data-txt>三步開始</h2><div class="row"><div class="step" data-box><div class="n" data-txt>01</div><strong data-txt>預購</strong><p data-txt>週五 20:00 開放。</p></div><div class="step" data-box><div class="n" data-txt>02</div><strong data-txt>出貨</strong><p data-txt>三個工作天。</p></div><div class="step" data-box><div class="n" data-txt>03</div><strong data-txt>開箱</strong><p data-txt>標記我們，抽下一批。</p></div></div><div class="pn" data-txt>08</div></section>
-<section class="slide closing"><div class="band"><span>NIGHTSHIFT</span></div><div class="mark" data-txt>夜行</div><h2 data-txt>天黑以後，見。</h2><p class="contact" data-txt>hey@nightshift.example（示意，換成你的）</p><div class="pn" data-txt>09</div></section>
+<section class="slide long"><div class="band"><span>NIGHTSHIFT</span></div><div class="mark" data-txt>夜行</div><h2 data-txt>內文多的時候</h2><div class="body"><p data-txt>這一頁是假字，用來示範內文很多的時候版面長什麼樣。字級還是 22，行距照大腦的設定，段落一段接一段往下排，不因為字多就把字縮小，也不把留白吃掉。</p><p data-txt>假字假字，這裡通常會放一段背景說明：為什麼要做這件事、之前試過什麼、現在卡在哪裡。寫的時候一段只講一個重點，讀的人才跟得上，講的人也不會念到一半迷路。</p><p data-txt>內文到這個量大概就是一頁的上限。再多就拆成兩頁，或改用三欄重點、步驟流程把重點並列；不要縮字硬塞，也不要把行距壓扁，那樣看起來就不像同一份簡報了。</p><p data-txt>最後一段留給補充：數字要有出處、名詞前後一致、日期用絕對值。這些寫在大腦的禁區裡，AI 排版時會照做，你交件前只要對一次就好。</p></div><div class="pn" data-txt>06</div></section>
+<section class="slide stat"><div class="band"><span>NIGHTSHIFT</span></div><div class="mark" data-txt>夜行</div><div class="num" data-txt>300 件</div><p data-txt>首批限量，售完為止。</p><p class="note" data-txt>示意數字，換成你的。</p><div class="pn" data-txt>07</div></section>
+<section class="slide section"><div class="mark" data-txt>夜行</div><div class="secnum" data-txt>02</div><h2 data-txt>上市</h2><div class="pn" data-txt>08</div></section>
+<section class="slide steps"><div class="band"><span>NIGHTSHIFT</span></div><div class="mark" data-txt>夜行</div><h2 data-txt>三步開始</h2><div class="row"><div class="step" data-box><div class="n" data-txt>01</div><strong data-txt>預購</strong><p data-txt>週五 20:00 開放。</p></div><div class="step" data-box><div class="n" data-txt>02</div><strong data-txt>出貨</strong><p data-txt>三個工作天。</p></div><div class="step" data-box><div class="n" data-txt>03</div><strong data-txt>開箱</strong><p data-txt>標記我們，抽下一批。</p></div></div><div class="pn" data-txt>09</div></section>
+<section class="slide closing"><div class="band"><span>NIGHTSHIFT</span></div><div class="mark" data-txt>夜行</div><h2 data-txt>天黑以後，見。</h2><p class="contact" data-txt>hey@nightshift.example（示意，換成你的）</p><div class="pn" data-txt>10</div></section>
 
 </body></html>

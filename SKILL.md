@@ -75,7 +75,7 @@ description: Use when 使用者要 AI 做出符合自家品牌的簡報：說「
 ## 範例（想先看長什麼樣）
 
 - `templates/examples/brand-brain-{pro|warm|tech|nature|vivid|luxe|neon|bento}.md`：八份填好的大腦（8 款代表範本），換掉第 0 節就能用。
-- `examples/{pro|warm|tech|nature|vivid|luxe|neon|bento}.html`：八份九頁式範例簡報，各配一種底稿風格與封面構圖，頁型：Design System → 封面 → 章節頁 → 三欄重點 → 左文右圖 → 一頁一數字 → 章節頁 → 步驟流程 → 封底。瀏覽器打開就能看；同名 `.pptx` 是燒圖管線做出來的可編輯版。線上版：https://hsing-resource-center.vercel.app/resources/ai-brand-brain
+- `examples/{pro|warm|tech|nature|vivid|luxe|neon|bento}.html`：八份十頁式範例簡報，各配一種底稿風格與封面構圖，頁型：Design System → 封面 → 章節頁 → 三欄重點 → 左文右圖 → 長文頁 → 一頁一數字 → 章節頁 → 步驟流程 → 封底。瀏覽器打開就能看；同名 `.pptx` 是燒圖管線做出來的可編輯版。線上版：https://hsing-resource-center.vercel.app/resources/ai-brand-brain
 - `scripts/pptx_from_spec.py`：PPTX 燒圖管線的組頁腳本（用法見 `references/pptx-bake.md`）。
 
 ## 模式二：做簡報
@@ -90,7 +90,7 @@ PPTX 怎麼做：本機終端環境（Claude Code、Codex、Gemini CLI）有 `py
 1. 顏色只准用色票四色。要新色，先問。
 2. 字型照大腦載入、附 fallback；字級全簡報一套。
 3. 版型預設照做，含垂直分布：內容不到半頁時，重點區垂直置中或字級放大，不留空半頁。字級全簡報一套、不准縮；一頁講一件事，內文超過一個版面裝不下，或超過三個並列重點，就拆頁，或改用頁型庫裡能並列更多重點的頁型，不縮字硬塞。
-   頁型照大腦的「頁型庫」排：**第 1 頁 Design System**（色票、字型、底稿、元件、場景、頁型六格）、封面、章節頁（每個大段落前一頁）、三欄重點、左文右圖、一頁一數字、步驟流程（有順序才用編號）、封底（一句話＋聯絡方式）。內容多就重複內容頁型，不發明新頁型；長什麼樣看 `examples/` 對應範本那份。
+   頁型照大腦的「頁型庫」排：**第 1 頁 Design System**（色票、字型、底稿、元件、場景、頁型六格）、封面、章節頁（每個大段落前一頁）、三欄重點、左文右圖、長文頁（內文多時用，字級仍不縮）、一頁一數字、步驟流程（有順序才用編號）、封底（一句話＋聯絡方式）。內容多就重複內容頁型，不發明新頁型；長什麼樣看 `examples/` 對應範本那份。
    底稿照大腦的「底稿風格」做成整份每頁共用的一層（CSS 寫法見 color-presets.md「底稿風格庫」），文字區的底稿元素透明度不超過 .3。
 4. 大腦裡的 `TODO` 用到時：交付先放佔位（虛線框＋「待提供」），在交付訊息裡問，不卡交付、不猜。
 5. **資產照 `references/asset-licenses.md`：**

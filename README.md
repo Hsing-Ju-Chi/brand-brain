@@ -73,7 +73,7 @@ Codex、Gemini CLI 把目標路徑換成 `~/.agents/skills/brand-brain`。不想
 - **references/pptx-bake.md**＋**scripts/pptx_from_spec.py**：PPTX 燒圖管線，底稿燒成圖、文字卡片 icon 原生可編輯（需要 Chrome）
 - **templates/brand-brain-template.md**：品牌大腦的標準格式
 - **templates/examples/**：八份填好的範例大腦，換掉品牌名就能用
-- **examples/**：八份九頁式範例簡報（HTML＋PPTX），第 1 頁 Design System，各配一種底稿風格與封面構圖，也是做簡報時的頁型庫
+- **examples/**：八份十頁式範例簡報（HTML＋PPTX），第 1 頁 Design System，各配一種底稿風格與封面構圖，也是做簡報時的頁型庫
 
 ## 免安裝版
 

@@ -2,7 +2,7 @@
 
 > 最後更新：2026-09-08
 > 用法：做簡報前，把這整份檔案先貼給 AI（或讓 skill 自動讀），再給簡報內容。
-> 這是 brand-brain 8 款代表範本之一（templates/examples/）：品牌「靜物」是虛構的，把第 0 節換成你的，其餘可以直接用。配套九頁範例簡報在 examples/luxe.html（PPTX 版 examples/luxe.pptx），第 1 頁就是這份大腦的 Design System。
+> 這是 brand-brain 8 款代表範本之一（templates/examples/）：品牌「靜物」是虛構的，把第 0 節換成你的，其餘可以直接用。配套十頁範例簡報在 examples/luxe.html（PPTX 版 examples/luxe.pptx），第 1 頁就是這份大腦的 Design System。
 
 ## 0. 定位
 
@@ -41,7 +41,7 @@
 - 標題區：內容頁左上；封面左半照片＋右側主標
 - footer 與頁碼：右下頁碼，14px 主色；右上品牌字樣
 - 章節頁：不換底色、大編號淡化、章節名主色
-- 頁型庫（做簡報時照這八種排，內容多就重複內容頁型）：Design System → 封面 → 章節頁 → 三欄重點 → 左文右圖 → 一頁一數字 → 步驟流程（順序才用編號） → 封底（一句話＋聯絡方式）
+- 頁型庫（做簡報時照這九種排，內容多就重複內容頁型）：Design System → 封面 → 章節頁 → 三欄重點 → 左文右圖 → 長文頁（內文多時用，仍不縮字） → 一頁一數字 → 步驟流程（順序才用編號） → 封底（一句話＋聯絡方式）
 - PPTX：底稿層燒成圖鋪滿背景，文字、卡片框、icon 原生可編輯（references/pptx-bake.md）
 
 ## 4. 資產風格

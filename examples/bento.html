@@ -26,12 +26,14 @@
   .split .cols{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:24px}
   .split .lines p{padding:14px 0;border-top:1px solid var(--primary)} .split .lines p:first-child{border-top:none}
   .split .photo{aspect-ratio:4/3}
+  .long .body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:18px;margin-top:24px;max-width:1040px}
   .stat{justify-content:center} .num{font-size:200px;line-height:1;color:var(--accent)} .stat p{margin-top:24px;max-width:640px}
   .steps .row{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-content:center;margin-top:24px}
   .step{padding:28px 32px;border-radius:24px;border-top:3px solid var(--accent)}
   .step .n{font-family:"Noto Sans TC",serif;font-weight:700;font-size:40px;color:var(--accent);line-height:1}
   .step strong{display:block;font-size:22px;font-weight:500;color:var(--primary);margin:14px 0 6px}
   .closing{justify-content:center;gap:32px} .closing .contact{color:var(--primary);font-size:22px}
+  .meta{display:flex;gap:28px;margin-top:28px;font-size:14px;letter-spacing:.25em;color:var(--accent)}
   /* Design System 頁 */
   .ds .dsgrid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:20px;margin-top:20px}
   .dsbox{padding:24px 26px;border-radius:24px;background:rgba(255,255,255,.5);border:1px solid rgba(31,41,55,0.18);display:flex;flex-direction:column;gap:12px;min-height:0}
@@ -125,8 +127,8 @@
   <circle cx="12" cy="12" r="10" />
   <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z" />
 </svg></div><div class="dsb" data-txt>Lucide icon 粗細 2 · 卡片圓角 24px · 頁碼右下 14px</div></div>
-   <div class="dsbox" data-box><div class="dsl" data-txt>場景</div><div class="dsb" data-txt>數據報告、年度回顧、產品總覽</div><div class="dsm" data-txt>留白適中（頁邊 72px）· 每頁 ≤60 字</div></div>
-   <div class="dsbox" data-box><div class="dsl" data-txt>頁型</div><div class="chips"><span data-txt data-box>封面</span><span data-txt data-box>章節頁</span><span data-txt data-box>三欄重點</span><span data-txt data-box>左文右圖</span><span data-txt data-box>一頁一數字</span><span data-txt data-box>章節頁</span><span data-txt data-box>步驟流程</span><span data-txt data-box>封底</span></div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>場景</div><div class="dsb" data-txt>數據報告、年度回顧、產品總覽</div><div class="dsm" data-txt>留白適中（頁邊 72px）· 字級不縮，裝不下就拆頁</div></div>
+   <div class="dsbox" data-box><div class="dsl" data-txt>頁型</div><div class="chips"><span data-txt data-box>封面</span><span data-txt data-box>章節頁</span><span data-txt data-box>三欄重點</span><span data-txt data-box>左文右圖</span><span data-txt data-box>長文頁</span><span data-txt data-box>一頁一數字</span><span data-txt data-box>章節頁</span><span data-txt data-box>步驟流程</span><span data-txt data-box>封底</span></div></div>
   </div><div class="pn" data-txt>01</div></section>
 <section class="slide cover"><div class="mark" data-txt>北斗電商</div><div class="block" data-box><p class="eyebrow" data-txt>BEIDOU COMMERCE</p><h1 data-txt data-lines="北斗電商
 2025 年度回顧">北斗電商<br>2025 年度回顧</h1><p class="sub" data-txt>數字自己會說話。</p></div>
@@ -184,9 +186,10 @@
 </svg><strong data-txt>物流</strong><p data-txt>平均 1.8 天到貨。</p></div></div><div class="pn" data-txt>04</div></section>
 <section class="slide split"><div class="mark" data-txt>北斗電商</div><h2 data-txt>最有效的一件事</h2>
   <div class="cols"><div class="lines"><p data-txt>把結帳從五步縮到兩步。</p><p data-txt>放棄率從 62% 降到 38%。</p><p data-txt>這一項貢獻了年增的一半。</p></div><div class="photo" data-box><span data-txt>照片佔位：搜尋 warehouse conveyor / dashboard on screen</span></div></div><div class="pn" data-txt>05</div></section>
-<section class="slide stat"><div class="mark" data-txt>北斗電商</div><div class="num" data-txt>34%</div><p data-txt>年營收成長，連續第三年雙位數。</p><p class="note" data-txt>示意數字，換成你的。</p><div class="pn" data-txt>06</div></section>
-<section class="slide section"><div class="mark" data-txt>北斗電商</div><div class="secnum" data-txt>02</div><h2 data-txt>明年</h2><div class="pn" data-txt>07</div></section>
-<section class="slide steps"><div class="mark" data-txt>北斗電商</div><h2 data-txt>三步開始</h2><div class="row"><div class="step" data-box><div class="n" data-txt>01</div><strong data-txt>會員分級</strong><p data-txt>Q1 上線，分三級。</p></div><div class="step" data-box><div class="n" data-txt>02</div><strong data-txt>自有物流</strong><p data-txt>Q2 覆蓋北北基。</p></div><div class="step" data-box><div class="n" data-txt>03</div><strong data-txt>第二品類</strong><p data-txt>Q3 開賣。</p></div></div><div class="pn" data-txt>08</div></section>
-<section class="slide closing"><div class="mark" data-txt>北斗電商</div><h2 data-txt>明年，再多一格。</h2><p class="contact" data-txt>ir@beidou.example（示意，換成你的）</p><div class="pn" data-txt>09</div></section>
+<section class="slide long"><div class="mark" data-txt>北斗電商</div><h2 data-txt>內文多的時候</h2><div class="body"><p data-txt>這一頁是假字，用來示範內文很多的時候版面長什麼樣。字級還是 22，行距照大腦的設定，段落一段接一段往下排，不因為字多就把字縮小，也不把留白吃掉。</p><p data-txt>假字假字，這裡通常會放一段背景說明：為什麼要做這件事、之前試過什麼、現在卡在哪裡。寫的時候一段只講一個重點，讀的人才跟得上，講的人也不會念到一半迷路。</p><p data-txt>內文到這個量大概就是一頁的上限。再多就拆成兩頁，或改用三欄重點、步驟流程把重點並列；不要縮字硬塞，也不要把行距壓扁，那樣看起來就不像同一份簡報了。</p><p data-txt>最後一段留給補充：數字要有出處、名詞前後一致、日期用絕對值。這些寫在大腦的禁區裡，AI 排版時會照做，你交件前只要對一次就好。</p></div><div class="pn" data-txt>06</div></section>
+<section class="slide stat"><div class="mark" data-txt>北斗電商</div><div class="num" data-txt>34%</div><p data-txt>年營收成長，連續第三年雙位數。</p><p class="note" data-txt>示意數字，換成你的。</p><div class="pn" data-txt>07</div></section>
+<section class="slide section"><div class="mark" data-txt>北斗電商</div><div class="secnum" data-txt>02</div><h2 data-txt>明年</h2><div class="pn" data-txt>08</div></section>
+<section class="slide steps"><div class="mark" data-txt>北斗電商</div><h2 data-txt>三步開始</h2><div class="row"><div class="step" data-box><div class="n" data-txt>01</div><strong data-txt>會員分級</strong><p data-txt>Q1 上線，分三級。</p></div><div class="step" data-box><div class="n" data-txt>02</div><strong data-txt>自有物流</strong><p data-txt>Q2 覆蓋北北基。</p></div><div class="step" data-box><div class="n" data-txt>03</div><strong data-txt>第二品類</strong><p data-txt>Q3 開賣。</p></div></div><div class="pn" data-txt>09</div></section>
+<section class="slide closing"><div class="mark" data-txt>北斗電商</div><h2 data-txt>明年，再多一格。</h2><p class="contact" data-txt>ir@beidou.example（示意，換成你的）</p><div class="pn" data-txt>10</div></section>
 
 </body></html>
