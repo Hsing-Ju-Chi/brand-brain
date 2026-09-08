@@ -40,18 +40,24 @@ AI 做的簡報總是不像你的品牌？因為它根本不認識你的品牌�
 
 它交出一份完整的 HTML 簡報（第 1 頁是你的 Design System）：顏色只用你的色票、字型照你的規定、版型照範本，icon 自動配好同一套，插圖告訴你去哪個免費庫拿、搜什麼、改成什麼色，最後附一張自我檢查清單證明它沒有偷加東西。
 
-## 裝法（同一包，四個落點）
+## 裝法（同一包，六個落點）
 
-| 你用的工具 | 放哪裡 | 能做到 |
+用終端機版的人最快：把這個 repo 的連結貼給它，說「把這個裝成 skill，放進 ~/.claude/skills/」（Codex、Gemini CLI 改說 ~/.agents/skills/），它會自己 clone、放好、生效。Gemini CLI 也有正式指令：
+
+```bash
+gemini skills install https://github.com/Hsing-Ju-Chi/brand-brain.git --consent
+```
+
+| 你用的工具 | 怎麼裝 | 能做到 |
 |---|---|---|
-| Claude Code（桌機 app 或終端機） | `~/.claude/skills/` | 全功能：查你電腦有沒有裝指定字型、直接抓 icon 內嵌、把底稿燒成圖輸出可編輯的 PPTX |
-| Codex（桌機 app 或終端機） | `~/.agents/skills/` | 讀得到整包規則與範本；PPTX 燒圖目前只在 Claude Code 驗過 |
-| Gemini CLI | `~/.agents/skills/`（跟 Codex 同一個位置，放一次兩家都吃） | 同 Codex；第一次用會要你按一次確認 |
-| Claude 網頁版或 App（免費版可用） | 設定 → 自訂 → Skills → 建立 → 上傳 ZIP；先在「功能」開啟「程式碼執行與檔案建立」 | 規則、範本、授權表全在；在雲端跑，所以查不到你電腦的字型、也不燒底稿 PPTX |
+| Claude Code（桌機 app 或終端機） | 貼連結叫它裝，或手動放進 `~/.claude/skills/` | 全功能：查你電腦有沒有裝指定字型、直接抓 icon 內嵌、把底稿燒成圖輸出可編輯的 PPTX |
+| Codex（桌機 app 或終端機） | 貼連結叫它裝，或手動放進 `~/.agents/skills/` | 讀得到整包規則與範本；PPTX 燒圖目前只在 Claude Code 驗過 |
+| Gemini CLI | 上面的指令，或手動放進 `~/.agents/skills/`（跟 Codex 同一個位置） | 同 Codex；第一次用會要你按一次確認 |
+| Claude 網頁版或 App（免費版可用） | 下載 ZIP → 設定 → 自訂 → Skills → 建立 → 上傳；先在「功能」開啟「程式碼執行與檔案建立」 | 規則、範本、授權表全在；在雲端跑，所以查不到你電腦的字型、也不燒底稿 PPTX |
 | ChatGPT | Skills 只開放 Business、Enterprise、Edu；Plus 與免費版把 `SKILL.md` 和 `references/` 的兩個檔案全文貼進自訂指令 | 規則生效，沒有本機功能 |
 | Gemini 網頁版 | 做成 Gem，指令欄貼 `SKILL.md` 全文 | 同上 |
 
-終端機使用者一行裝好（Claude Code）：
+手動裝（Claude Code 一行）：
 
 ```bash
 git clone https://github.com/Hsing-Ju-Chi/brand-brain.git ~/.claude/skills/brand-brain
