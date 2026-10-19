@@ -79,14 +79,14 @@ Codex、Gemini CLI 把目標路徑換成 `~/.agents/skills/brand-brain`。不想
 
 只想先試試看？免安裝的簡報提示詞版在這裡，貼進任何 AI 就能用：
 
-https://hsing-resource-center.vercel.app/resources/ai-brand-brain
+https://hsingdaily.com/resources/ai-brand-brain
 
 ## 出處
 
 阿幸 hsing.daily。內容全部原創撰寫。
 
 - Instagram: [@hsing.daily](https://www.instagram.com/hsing.daily/)
-- 資源中心: https://hsing-resource-center.vercel.app
+- 資源中心: https://hsingdaily.com
 
 ## 給維護者：檔數紅線
 
